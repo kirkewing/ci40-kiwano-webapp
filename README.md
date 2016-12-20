@@ -12,7 +12,9 @@ therefore providing data cloud storage.
 Kiwano is a middle tier Webapp, which consumes the Device Server REST API and it's
 resources, fetching for connected devices (clients) and it's temperature values.
 Finaly the Webapp provides a RESTAPI to consume the DataBase, in Project 4 it's 
-used an Android Mobile App, but another REST client could also be used. 
+used an Android Mobile App, but another REST client could also be used.  
+
+[![Build Status](https://travis-ci.org/hugo-santos-imgtec/ci40_relay_webapp.svg?branch=master)](https://travis-ci.org/hugo-santos-imgtec/ci40_relay_webapp) 
 
 ---
 
