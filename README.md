@@ -18,7 +18,7 @@ used an Android Mobile App, but another REST client could also be used.
 
 ## Webapp Architecture
 
-![Architecture](../images/kiwano1.jpg)
+![Architecture](./images/kiwano1.jpg)
 
 ## Jump Start
 
