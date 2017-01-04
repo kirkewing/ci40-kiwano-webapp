@@ -12,6 +12,7 @@
  */
 
 var config = require('./../../config.js');
+const Utils = require('../helpers/Utils');
 
 var LOGIN_ACCESS_KEY,
     LOGIN_ACCESS_SECRET;
@@ -170,7 +171,7 @@ exports.initialize = function (handler) {
         .then((clients) => {
 
             return Promise.all(clients.map(cl => {
-                return subscribeToObservation(cl.Name, '3303', '0', 'SensorValue', config.HOST + '/api/v1/notifications/temperatureChanged')
+                return subscribeToObservation(cl.Name, '3303', '0', 'SensorValue', Utils.getHost(config.HOST) + '/api/v1/notifications/temperatureChanged')
                     .then((response) => {
                         console.log(response);
                         return cl;
@@ -245,7 +246,7 @@ exports.onClientUpdated = function (req, res, handler) {
         })
         .then((c) => {
             console.log("Subscribing client %s to temp changes", c.Name);
-            return subscribeToObservation(c.Name, '3303', '0', 'SensorValue', config.HOST + '/api/v1/notifications/temperatureChanged')
+            return subscribeToObservation(c.Name, '3303', '0', 'SensorValue', Utils.getHost(config.HOST) + '/api/v1/notifications/temperatureChanged')
                 .then((response) => {
                     console.log(response);
                     return c;

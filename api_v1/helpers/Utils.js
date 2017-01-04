@@ -38,3 +38,7 @@ exports.getClientIDFromURL = function(clientUrl) {
     }
     return res[1];
 };
+
+exports.getHost = function(host) {
+    return host.replace(/\/+$/, "");
+}
