@@ -13,6 +13,9 @@ var users = require('./app_server/routes/users');
 var mobile_routes = require('./api_v1/routes/mobile_routes');
 var deviceserver_routes = require('./api_v1/routes/deviceserver_routes');
 var deviceserver_controller = require('./api_v1/controllers/deviceserver_controller');
+
+const Utils = require('./api_v1/helpers/Utils');
+
 // reates an Express application
 var app = express();
 
@@ -71,8 +74,7 @@ app.use(function (err, req, res, next) {
 
 module.exports = app;
 
-
-deviceserver_controller.subscribeToClientConnect(config.HOST + "/api/v1/notifications/clientConnected")
+deviceserver_controller.subscribeToClientConnect(Utils.getHost(config.HOST) + "/api/v1/notifications/clientConnected")
     .then((response) => {
         switch (response.statusCode) {
             case 409:
@@ -88,7 +90,7 @@ deviceserver_controller.subscribeToClientConnect(config.HOST + "/api/v1/notifica
         }
     });
 
-deviceserver_controller.subscribeToClientUpdate(config.HOST + "/api/v1/notifications/clientUpdated")
+deviceserver_controller.subscribeToClientUpdate(Utils.getHost(config.HOST) + "/api/v1/notifications/clientUpdated")
     .then((response) => {
         switch (response.statusCode) {
             case 409:
