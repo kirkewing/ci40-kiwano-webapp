@@ -41,4 +41,4 @@ exports.getClientIDFromURL = function(clientUrl) {
 
 exports.getHost = function(host) {
     return host.replace(/\/+$/, "");
-}
+};
