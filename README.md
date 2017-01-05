@@ -41,31 +41,38 @@ This guide exaplains the process of cloud deploying the Webapp in Heroku and mLa
 using their free tiers. However the performance can be improved using a payed service,
 or if you prefer different hosting services: AWS, Google Cloud, etc.
 
-### 1. Developer Console - Create Account
+### 1. Project Setup
+
+1. Clone the project from git repository
+2. Rename **template_config.js** to **config.js**
+3. Remove **config.js** from **.gitignore**
+
+### 2. Developer Console - Create Account
 
 1. Create a [Developer Console](https://console.creatordev.io) account  
 2. Generate a set of API Keys
 3. Insert the API Keys into the **config.js file**, located on your projects root 
 folder
 
-### 2. Heroku - Push The Webapp Source Code
+### 3. mLab - Create the DB (Manual Setup)
+
+1. Sign up for an [mlab free account](https://mlab.com/) 
+2. Create a new database (select Single Node, Sandbox for the free tier)
+3. Add a user
+4. Save the database URI (connection string) visible on the dashboard: ```mongodb://<dbuser>:<dbpassword>@<dbuser>.mlab.com:<port>/<db_name>```
+   (it will be used in step 4.6). 
+
+### 4. Heroku - Push The Webapp Source Code
 
 1. Get the project, by ZIP download or git clone
 2. Create an [Heroku account](https://www.heroku.com/)
 3. Install [Heroku Command Line Interface (CLI)](https://devcenter.heroku.com/articles/heroku-command-line)
 4. Enter your Heroku credentials: ```$ heroku login``` 
 5. Create the application on Heroku: ```$ heroku create```
-6. Deploy the application on Heroku: ```$ git push heroku master``` 
-
-### 3. mLab - Create the DB (Manual Setup)
-
-1. Sign up for an [mlab free account](https://mlab.com/) 
-2. Create a new database (select Single Node, Sandbox for the free tier)
-3. Add a user
-4. Get the database URI (connection string) visible on the dashboard: ```mongodb://<dbuser>:<dbpassword>@<dbuser>.mlab.com:<port>/<db_name>``` 
-5. Complete the connection string with your account details. Save the connection 
-string as mongo db configuration: ```$ heroku config:set MONGOLAB_URI=your_db_uri```
-
+6. Save the connection string as mongo db configuration: ```$ heroku config:set MONGOLAB_URI=your_db_uri```
+7. Modify **config.js** and update HOST with your application url (will be used to handle subscribtions)
+8. Deploy the application on Heroku: ```$ git push heroku master``` 
+ 
 ---
 
 ## Start The Web App (Locally)
