@@ -20,5 +20,5 @@ module.exports = {
     'dbURI': 'mongodb://localhost/test_db',
     'LOGIN_ACCESS_KEY': 'Developer_Console_Access_Key',
     'LOGIN_ACCESS_SECRET': 'Developer_Console_Access_Secret',
-    'HOST': 'URL'
+    'HOST': 'http://host_URL'
 };

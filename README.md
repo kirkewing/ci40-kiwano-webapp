@@ -10,7 +10,7 @@ uses a MongoDB database, hosted in the cloud - [mLab](https://mlab.com/),
 therefore providing data cloud storage.  
 Kiwano is a middle tier Webapp, which consumes the Device Server REST API and it's
 resources, fetching for connected devices (AwLWM2M clients) and it's temperature values.
-Finaly the Webapp provides a RESTAPI to consume the DataBase, in Project 4 it's 
+Finally the Webapp provides a RESTAPI to consume the DataBase, in Project 4 it's 
 used an Android Mobile App, but another REST client could also be used.  
 
 [![Build Status](https://travis-ci.org/CreatorDev/ci40-kiwano-webapp.svg?branch=master)](https://travis-ci.org/CreatorDev/ci40-kiwano-webapp)
@@ -64,13 +64,13 @@ folder
 
 ### 4. Heroku - Push The Webapp Source Code
 
-1. Get the project, by ZIP download or git clone
-2. Create an [Heroku account](https://www.heroku.com/)
-3. Install [Heroku Command Line Interface (CLI)](https://devcenter.heroku.com/articles/heroku-command-line)
-4. Enter your Heroku credentials: ```$ heroku login``` 
-5. Create the application on Heroku: ```$ heroku create```
-6. Save the connection string as mongo db configuration: ```$ heroku config:set MONGOLAB_URI=your_db_uri```
-7. Modify **config.js** and update HOST with your application url (will be used to handle subscribtions)
+1. Create an [Heroku account](https://www.heroku.com/)
+2. Install [Heroku Command Line Interface (CLI)](https://devcenter.heroku.com/articles/heroku-command-line)
+3. Enter your Heroku credentials: ```$ heroku login``` 
+4. Create the application on Heroku: ```$ heroku create```
+5. Complete the connection string with your account details. Save the connection string as mongo db configuration: ```$ heroku config:set MONGOLAB_URI=your_db_uri```
+6. Modify **config.js** and update HOST with your application url (will be used to handle subscriptions)
+7. On the console add to stage and commit the changes: ``` $ git add . ```  ``` $ git commit -m "First commit" ``` 
 8. Deploy the application on Heroku: ```$ git push heroku master``` 
  
 ---
