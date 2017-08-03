@@ -17,8 +17,8 @@
  */
 module.exports = {
     'secret': 'secret',
-    'dbURI': 'mongodb://localhost/test_db',
-    'LOGIN_ACCESS_KEY': 'Developer_Console_Access_Key',
-    'LOGIN_ACCESS_SECRET': 'Developer_Console_Access_Secret',
-    'HOST': 'http://host_URL'
+    'dbURI': 'mongodb://kirk:kirk@ds137090.mlab.com:37090/kirkbrewtemp',
+    'LOGIN_ACCESS_KEY': 'I_A4b-YRdWJZc686Q1CuLHNlYOaeRLXRd95HOOzB_1mG-1EZgK_gesPJtL1N0xIDop3lHM15HXqW1FF5BdcVUw',
+    'LOGIN_ACCESS_SECRET': 'DYW16MQO2QGtekp0aSNSJkxrKFZydmk7gEo8UPTiVenRL4iHkGUKPvQMPIfyZKpEE25_DpC_hpemv1b-GY8VPw',
+    'HOST': 'https://morning-eyrie-46634.herokuapp.com/'
 };
